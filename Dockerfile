@@ -1,16 +1,19 @@
-FROM python:alpine
-
+FROM golang:1.16.2-alpine3.13 as builder
 WORKDIR /app
+COPY . ./
+# This is where one could build the application code as well.
 
-COPY ./app/requirements.txt /app/app/
-RUN pip install --no-cache-dir -r /app/app/requirements.txt
+# https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
+FROM alpine:latest
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 
-RUN wget https://pkgs.tailscale.com/stable/$(wget -q -O- https://pkgs.tailscale.com/stable/ | grep 'amd64.tgz' | cut -d '"' -f 2) && \
-    tar xzf tailscale* --strip-components=1
+# Copy binary to production image.
+COPY --from=builder /app/start.sh /app/start.sh
+
+# Copy Tailscale binaries from the tailscale image on Docker Hub.
+COPY --from=docker.io/tailscale/tailscale:stable /usr/local/bin/tailscaled /app/tailscaled
+COPY --from=docker.io/tailscale/tailscale:stable /usr/local/bin/tailscale /app/tailscale
 RUN mkdir -p /var/run/tailscale /var/cache/tailscale /var/lib/tailscale
 
-#ENV PORT 1229
-#EXPOSE 1229
-
-COPY . .
-CMD /app/app/start.sh
+# Run on container startup.
+CMD ["/app/start.sh"]

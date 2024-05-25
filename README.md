@@ -50,7 +50,7 @@ with an appropriate value from **Users** tab.
 			"tailscale.com/app-connectors": [{"name": "github", "connectors": ["tag:vpn"], "presetAppID": "github"}],
 		}},
 	],
-}```
+	}```
 
 ![4](/assets/4.png)
 ![7](/assets/7.png)

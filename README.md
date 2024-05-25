@@ -18,7 +18,8 @@ services with excessive usage.</code><br>
     ![3](/assets/3.png)
 3. Go to the **Access Controls** tab and save the following JSON into **Edit file** section, replacing <code>x0rzavi@github</code>
 with an appropriate value from **Users** tab.
-    ``` {
+    ```json
+    {
 	"acls": [
 		{"action": "accept", "src": ["*"], "dst": ["*:*"]},
 	],
@@ -50,7 +51,8 @@ with an appropriate value from **Users** tab.
 			"tailscale.com/app-connectors": [{"name": "github", "connectors": ["tag:vpn"], "presetAppID": "github"}],
 		}},
 	],
-	}```
+	}
+	```
 
 ![4](/assets/4.png)
 ![7](/assets/7.png)

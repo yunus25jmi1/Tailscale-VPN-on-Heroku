@@ -11,7 +11,7 @@ services with excessive usage.</code><br>
 ### Pre Deployment Guide:
 1. Signup on [Tailscale](https://tailscale.com/).
 
-    ![1](/assets/1.png)
+    
     ![2](/assets/2.png)
 2. Connect atleast one device following the tailscale **Introduction guide**.
 

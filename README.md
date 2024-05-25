@@ -18,8 +18,7 @@ services with excessive usage.</code><br>
     ![3](/assets/3.png)
 3. Go to the **Access Controls** tab and save the following JSON into **Edit file** section, replacing <code>x0rzavi@github</code>
 with an appropriate value from **Users** tab.
-    ```json
-    {
+    ``` {
 	"acls": [
 		{"action": "accept", "src": ["*"], "dst": ["*:*"]},
 	],
@@ -51,15 +50,15 @@ with an appropriate value from **Users** tab.
 			"tailscale.com/app-connectors": [{"name": "github", "connectors": ["tag:vpn"], "presetAppID": "github"}],
 		}},
 	],
-} ```
+}```
 
-    ![4](/assets/4.png)
-    ![7](/assets/7.png)
+![4](/assets/4.png)
+![7](/assets/7.png)
 4. Go to **Keys** section in **Settings** tab and generate an **auth key**. Paste this key into render when asked for.
 Also save it for future use.
 
-    ![5](/assets/5.png)
-    ![6](/assets/6.png)<br>
+![5](/assets/5.png)
+![6](/assets/6.png)<br>
 ### Deployment:
 Deploy For Render:
 1. Open Render Dashboard.

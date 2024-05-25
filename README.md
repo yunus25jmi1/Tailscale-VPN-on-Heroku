@@ -76,6 +76,7 @@ Deploy For Render:
      TAILSCALE_AUTHKEY = paste tailscale auth key ( step 4 from Pre-Deployment)
      ```
 10. Click on Create Web Service.
+# Heroku Deployment
 [![DeployFor Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)<br>
 ### Post Deployment guide:
 1. Open tailscale client on the device you want to use VPN. (Guide shows for android)

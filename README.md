@@ -82,15 +82,15 @@ Deploy For Render:
 ### Post Deployment guide:
 1. Open tailscale client on the device you want to use VPN. (Guide shows for android)
 
-    ![A](/assets/A.jpeg)
+    ![A](/assets/A.jpg)
 2. Connect your client to tailscale.
 3. Tap **Use exit node** and select the correct online machine after checking in tailscale [dashboard](https://login.tailscale.com/admin/machines)
 
-    ![B](/assets/B.jpeg)
-    ![C](/assets/C.jpeg)
+    ![B](/assets/B.jpg)
+    ![C](/assets/C.jpg)
 4. VPN should start working.
 
-    ![D](/assets/D.jpeg)<br>
+    ![D](/assets/D.jpg)<br>
 ### Notes:
 - Make sure, you have followed the steps as precisely as possible.
 - As always, heroku/render dynos will sleep after a certain amount of time. This repo has no hardcoded way to circumvent that (who needs a VPN 24/7 anyways ?) but it does serve a site which you can ping. So, it is totally upto YOU how you want to keep it running. Few utilities worth noting are: 
